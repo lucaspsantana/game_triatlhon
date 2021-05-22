@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/sprite/botao-abaixar.png" type="Texture" id=1]
+[ext_resource path="res://src/Object/Joystick.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprite/botao-pular.png" type="Texture" id=3]
+
+[node name="Joystick" type="CanvasLayer"]
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 0, 0 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 790.887 ]
+}
+
+[node name="left" type="TextureButton" parent="."]
+margin_left = 108.201
+margin_top = 396.975
+margin_right = 172.201
+margin_bottom = 460.975
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="TextureButton" parent="."]
+margin_left = 784.526
+margin_top = 397.627
+margin_right = 848.526
+margin_bottom = 461.628
+texture_normal = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="left" to="." method="_on_left_button_up"]
+[connection signal="button_up" from="right" to="." method="_on_right_button_up"]
