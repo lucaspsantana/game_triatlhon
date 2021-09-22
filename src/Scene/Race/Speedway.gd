@@ -26,7 +26,7 @@ func _physics_process(delta):
 	time += 1 * delta
 	if time > 5:
 		print("criou")
-		var node = preload("res://src/object/Obstacules.tscn")
+		var node = preload("res://src/Object/Obstacules.tscn")
 		var scene = node.instance()
 		get_parent().add_child(scene)
 		obstacules = scene
@@ -54,15 +54,18 @@ func _physics_process(delta):
 	$"/root/Settings".parallax_speed_obstacule = $ParallaxBackground.speed
 
 func _on_Timer_timeout():
-	if $Player.global_position.x < $marathonist.position.x:
-		$"/root/Settings".final_position = 4
-	elif $Player.global_position.x < $marathonist2.position.x:
-		$"/root/Settings".final_position = 3
-	elif $Player.global_position.x < $marathonist3.position.x:
-		$"/root/Settings".final_position = 2
-	else:
-		$"/root/Settings".final_position = 1
+	$"/root/Settings".final_position = get_runner_position()
 	print($"/root/Settings".final_position)
 	animation_transition.play("fade_in")
 	yield(animation_transition, "animation_finished")
 	get_tree().change_scene("res://src/Scene/Race/EndGame.tscn")
+	
+func get_runner_position():
+	if $Player.global_position.x < $marathonist.global_position.x:
+		return 4
+	elif $Player.global_position.x < $marathonist2.global_position.x:
+		return 3
+	elif $Player.global_position.x < $marathonist3.global_position.x:
+		return 2
+	else:
+		return 1

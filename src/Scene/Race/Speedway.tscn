@@ -86,21 +86,19 @@ autostart = true
 modulate = Color( 1, 1, 0, 1 )
 position = Vector2( 165.52, 822.261 )
 frames = SubResource( 3 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="marathonist2" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 0, 1, 1 )
 position = Vector2( 421.809, 918.37 )
 frames = SubResource( 3 )
-frame = 4
 playing = true
 
 [node name="marathonist3" type="AnimatedSprite" parent="."]
 modulate = Color( 0, 1, 1, 1 )
 position = Vector2( 630.044, 859.637 )
 frames = SubResource( 3 )
-frame = 4
 playing = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
