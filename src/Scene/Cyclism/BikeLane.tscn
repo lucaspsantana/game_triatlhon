@@ -3,9 +3,12 @@
 [ext_resource path="res://src/Scene/Swim/ParallaxBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Object/Joystick.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actor/Cyclist.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/sprite/cyclist.png" type="Texture" id=5]
 [ext_resource path="res://src/Scene/Cyclism/BikeLane.gd" type="Script" id=6]
 [ext_resource path="res://src/Object/Transition.tscn" type="PackedScene" id=7]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/cyclist.png-ade2178a5e91b78a5988a358c2150472.stex"
 
 [node name="BikeLane" type="Node2D"]
 script = ExtResource( 6 )
@@ -25,21 +28,21 @@ modulate = Color( 1, 1, 0, 1 )
 position = Vector2( 536.121, 857.038 )
 rotation = 0.00143952
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 5 )
+texture = SubResource( 1 )
 
 [node name="cyclist2" type="Sprite" parent="."]
 modulate = Color( 1, 0, 1, 1 )
 position = Vector2( 471.937, 880.568 )
 rotation = 0.00143952
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 5 )
+texture = SubResource( 1 )
 
 [node name="cyclist3" type="Sprite" parent="."]
 modulate = Color( 0, 1, 1, 1 )
 position = Vector2( 490.815, 928.772 )
 rotation = 0.00143952
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 5 )
+texture = SubResource( 1 )
 
 [node name="Transition" parent="." instance=ExtResource( 7 )]
 

@@ -19,6 +19,7 @@ func _ready():
 	yield(animation, "animation_finished")
 	play = !play
 	$ParallaxBackground.play = play
+	$Player/AnimatedSprite.play("pedal")
 
 func _physics_process(delta):
 	if play:

@@ -8,6 +8,7 @@ func _ready():
 	yield(animation_transition, "animation_finished")
 	play = !play
 	$Background.play = play
+	$Player/AnimatedSprite.play('swim')
 
 func _physics_process(delta):
 	if play:
