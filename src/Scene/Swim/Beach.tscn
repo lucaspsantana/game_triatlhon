@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Scene/Swim/Beach.gd" type="Script" id=1]
 [ext_resource path="res://src/Actor/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Object/Joystick.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Scene/Swim/Background.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/sprite/swim/nadar3.png" type="Texture" id=5]
 [ext_resource path="res://src/Object/Transition.tscn" type="PackedScene" id=6]
 
 [node name="Beach" type="Node2D"]
@@ -15,30 +14,32 @@ __meta__ = {
 
 [node name="Joystick" parent="." instance=ExtResource( 3 )]
 
-[node name="swimmer" type="Sprite" parent="."]
-modulate = Color( 1, 1, 0.211765, 1 )
-position = Vector2( 664.965, 482.114 )
-rotation = 0.00943364
-texture = ExtResource( 5 )
-
-[node name="swimmer2" type="Sprite" parent="."]
-modulate = Color( 1, 0.286275, 1, 1 )
-position = Vector2( 666.346, 388.167 )
-rotation = 0.00943364
-texture = ExtResource( 5 )
-
-[node name="swimmer3" type="Sprite" parent="."]
-modulate = Color( 1, 0.227451, 0.180392, 1 )
-position = Vector2( 668.724, 680.712 )
-rotation = 0.00943364
-texture = ExtResource( 5 )
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0
 autostart = true
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 678.238, 566.548 )
+[node name="swimmer" parent="." groups=[
+"swimmers",
+] instance=ExtResource( 2 )]
+position = Vector2( 678.238, 236.917 )
+rotation = -0.283442
+
+[node name="swimmer3" parent="." groups=[
+"swimmers",
+] instance=ExtResource( 2 )]
+position = Vector2( 681.602, 374.824 )
+rotation = -0.283442
+
+[node name="Player" parent="." groups=[
+"swimmers",
+] instance=ExtResource( 2 )]
+position = Vector2( 688.329, 553.094 )
+rotation = -0.283442
+
+[node name="swimmer2" parent="." groups=[
+"swimmers",
+] instance=ExtResource( 2 )]
+position = Vector2( 691.692, 694.364 )
 rotation = -0.283442
 
 [node name="Background" parent="." instance=ExtResource( 4 )]

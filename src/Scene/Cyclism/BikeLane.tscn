@@ -8,7 +8,6 @@
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
-load_path = "res://.import/cyclist.png-ade2178a5e91b78a5988a358c2150472.stex"
 
 [node name="BikeLane" type="Node2D"]
 script = ExtResource( 6 )
