@@ -9,49 +9,31 @@ script = ExtResource( 1 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 
-[node name="Position2D" type="Position2D" parent="ParallaxLayer" groups=[
-"obstacules",
-]]
+[node name="Position2D" type="Position2D" parent="ParallaxLayer" groups=["obstacules"]]
 position = Vector2( 2018.66, 944.946 )
 
-[node name="Position2D2" type="Position2D" parent="ParallaxLayer" groups=[
-"obstacules",
-]]
+[node name="Position2D2" type="Position2D" parent="ParallaxLayer" groups=["obstacules"]]
 position = Vector2( 2710, 934.255 )
 
-[node name="Position2D3" type="Position2D" parent="ParallaxLayer" groups=[
-"obstacules",
-]]
+[node name="Position2D3" type="Position2D" parent="ParallaxLayer" groups=["obstacules"]]
 position = Vector2( 3419.16, 952.073 )
 
-[node name="Position2D4" type="Position2D" parent="ParallaxLayer" groups=[
-"water",
-]]
+[node name="Position2D4" type="Position2D" parent="ParallaxLayer" groups=["water"]]
 position = Vector2( 3143.09, 488.212 )
 
-[node name="Position2D5" type="Position2D" parent="ParallaxLayer" groups=[
-"water",
-]]
+[node name="Position2D5" type="Position2D" parent="ParallaxLayer" groups=["water"]]
 position = Vector2( 2330.59, 488.212 )
 
-[node name="Position2D9" type="Position2D" parent="ParallaxLayer" groups=[
-"water",
-]]
+[node name="Position2D9" type="Position2D" parent="ParallaxLayer" groups=["water"]]
 position = Vector2( 3713.27, 509.594 )
 
-[node name="Position2D6" type="Position2D" parent="ParallaxLayer" groups=[
-"mosquito",
-]]
+[node name="Position2D6" type="Position2D" parent="ParallaxLayer" groups=["mosquito"]]
 position = Vector2( 3998.35, 702.028 )
 
-[node name="Position2D8" type="Position2D" parent="ParallaxLayer" groups=[
-"mosquito",
-]]
+[node name="Position2D8" type="Position2D" parent="ParallaxLayer" groups=["mosquito"]]
 position = Vector2( 5060.3, 684.21 )
 
-[node name="Position2D7" type="Position2D" parent="ParallaxLayer" groups=[
-"mosquito",
-]]
+[node name="Position2D7" type="Position2D" parent="ParallaxLayer" groups=["mosquito"]]
 position = Vector2( 4522.2, 719.846 )
 
 [node name="Area2D" type="Area2D" parent="."]

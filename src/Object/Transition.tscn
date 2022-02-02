@@ -56,11 +56,11 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[node name="Transition" type="Node2D"]
+[node name="Transition" type="CanvasLayer"]
+layer = 100
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.72549 )
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 1922.0
 margin_bottom = 1080.0
 color = Color( 0, 0, 0, 1 )

@@ -1,50 +1,217 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=35 format=2]
 
+[ext_resource path="res://assets/sprite/blue/idle_1.png" type="Texture" id=1]
 [ext_resource path="res://src/Actor/Player.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprite/swim/andar2.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprite/swim/andar3.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprite/swim/andar1.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprite/swim/andar6.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprite/swim/pular3.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprite/swim/idle4.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprite/swim/nadar4.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprite/swim/andar5.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprite/swim/nadar1.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprite/swim/nadar2.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprite/swim/idle5.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprite/swim/pular1.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprite/swim/idle3.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprite/swim/andar4.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprite/swim/pular2.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprite/swim/idle2.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprite/swim/idle1.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprite/swim/nadar3.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/blue/idle_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/blue/running_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/blue/running_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/blue/running_6.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/blue/running_5.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/blue/running_4.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/blue/idle_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/blue/jump_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/blue/running_9.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/blue/running_1.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/blue/swimming_4.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite/blue/idle_4.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite/blue/running_11.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite/blue/idle_5.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite/blue/running_10.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite/blue/swimming_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite/blue/swimming_2.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite/blue/swimming_3.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite/blue/running_8.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite/blue/ride_4.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite/blue/ride_6.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite/blue/ride_3.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite/blue/ride_2.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite/blue/ride_5.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite/blue/ride_1.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprite/wave/wavefull_1.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprite/wave/wavefull_2.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprite/wave/wavefull_3.png" type="Texture" id=30]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 22.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 20 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "swim",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 18 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 21 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "running",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "swimming",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "ride",
+"speed": 5.0
 } ]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("animationNode/wave_1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("animationNode/wave_2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("animationNode/wave_3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("animationNode/wave_6:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("animationNode/wave_5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("animationNode/wave_4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "wave"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("animationNode/wave_1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, false, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("animationNode/wave_2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("animationNode/wave_3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("animationNode/wave_6:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("animationNode/wave_5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("animationNode/wave_4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, 1 )
@@ -57,8 +224,49 @@ position = Vector2( -0.5, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 0.5 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
-animation = "idle"
-frame = 1
+animation = "swimming"
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/wave = SubResource( 4 )
+
+[node name="animationNode" type="Node2D" parent="."]
+
+[node name="wave_1" type="Sprite" parent="animationNode"]
+visible = false
+position = Vector2( -6, 29.55 )
+scale = Vector2( 0.269231, 0.45 )
+texture = ExtResource( 28 )
+
+[node name="wave_2" type="Sprite" parent="animationNode"]
+visible = false
+position = Vector2( -10, 27.1875 )
+scale = Vector2( 0.249164, 0.45709 )
+texture = ExtResource( 29 )
+
+[node name="wave_3" type="Sprite" parent="animationNode"]
+visible = false
+position = Vector2( -5, 25.75 )
+scale = Vector2( 0.244128, 0.443548 )
+texture = ExtResource( 30 )
+
+[node name="wave_4" type="Sprite" parent="animationNode"]
+visible = false
+position = Vector2( -6, 36.75 )
+scale = Vector2( 0.269231, 0.308824 )
+texture = ExtResource( 28 )
+
+[node name="wave_5" type="Sprite" parent="animationNode"]
+visible = false
+position = Vector2( -10, 36.25 )
+scale = Vector2( 0.249164, 0.559702 )
+texture = ExtResource( 29 )
+
+[node name="wave_6" type="Sprite" parent="animationNode"]
+visible = false
+position = Vector2( -5, 42 )
+scale = Vector2( 0.244128, 0.403226 )
+texture = ExtResource( 30 )

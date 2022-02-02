@@ -2,11 +2,11 @@
 
 [ext_resource path="res://src/Scene/Race/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprite/correr-3.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprite/pular-2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/blue/jump_2.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprite/correr-5.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprite/correr-6.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprite/correr-7.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprite/pular-1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/blue/jump_1.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprite/correr-4.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprite/correr-2.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprite/botao-pular.png" type="Texture" id=10]
