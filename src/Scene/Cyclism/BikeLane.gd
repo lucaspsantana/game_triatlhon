@@ -19,33 +19,33 @@ func _ready():
 	yield(animation, "animation_finished")
 	play = !play
 	$ParallaxBackground.play = play
-	$Player/AnimatedSprite.play("pedal")
+	start_animation_group("cyclist")
 
 func _physics_process(delta):
 	if play:
 		var speed_player = $ParallaxBackground.speed
 		if speed_player > 600:
-			if $cyclist.position.x > 150 :
-				$cyclist.position.x -=  100 * delta
-			if $cyclist2.position.x > 180 :
-				$cyclist2.position.x -=  80 * delta
-			if $cyclist3.position.x > 250 :
-				$cyclist3.position.x -=  60 * delta
+			if $Cyclist.position.x > 150 :
+				$Cyclist.position.x -=  100 * delta
+			if $Cyclist2.position.x > 180 :
+				$Cyclist2.position.x -=  80 * delta
+			if $Cyclist3.position.x > 250 :
+				$Cyclist3.position.x -=  60 * delta
 			if $Player.global_position.x < 900:
 				$Player.global_position.x += 100 * delta
 				if $Player.global_position.x > 900:
 					$Player.global_position.x = 900
 		else:
-			$cyclist.position.x +=  60 * delta	
-			$cyclist2.position.x +=  80 * delta
-			$cyclist3.position.x +=  100 * delta
+			$Cyclist.position.x +=  60 * delta	
+			$Cyclist2.position.x +=  80 * delta
+			$Cyclist3.position.x +=  100 * delta
 
 func _on_Timer_timeout():
-	if $Player.global_position.x < $cyclist.position.x:
+	if $Player.global_position.x < $Cyclist.position.x:
 		$"/root/Settings".final_position = 4
-	elif $Player.global_position.x < $cyclist2.position.x:
+	elif $Player.global_position.x < $Cyclist2.position.x:
 		$"/root/Settings".final_position = 3
-	elif $Player.global_position.x < $cyclist3.position.x:
+	elif $Player.global_position.x < $Cyclist3.position.x:
 		$"/root/Settings".final_position = 2
 	else:
 		$"/root/Settings".final_position = 1
@@ -53,4 +53,8 @@ func _on_Timer_timeout():
 	animation.play("fade_in")
 	yield(animation, "animation_finished")
 	get_tree().change_scene("res://src/Scene/Race/Speedway.tscn")
-			
+
+func start_animation_group(nameGroup):
+	var nodes = get_tree().get_nodes_in_group(nameGroup)
+	for x in nodes:
+		x.start = true

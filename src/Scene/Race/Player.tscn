@@ -55,8 +55,7 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 3 )
-animation = "jump"
+animation = "run"
 
-[connection signal="button_down" from="jump" to="." method="_on_jump_button_down"]
 [connection signal="button_up" from="jump" to="." method="_on_jump_button_up"]
 [connection signal="pressed" from="jump" to="." method="_on_jump_pressed"]

@@ -21,6 +21,7 @@ func _ready():
 	yield(animation_transition, "animation_finished")
 	play = !play
 	$ParallaxBackground.play = play
+	start_animation_group("marathonist")
 
 func _physics_process(delta):
 	time += 1 * delta
@@ -33,20 +34,20 @@ func _physics_process(delta):
 		time = 0
 	var speed_player = $ParallaxBackground.speed
 	if speed_player > 500:
-		if $marathonist.position.x > 150 :
-			$marathonist.position.x -=  100 * delta
-		if $marathonist2.position.x > 180 :
-			$marathonist2.position.x -=  80 * delta
-		if $marathonist3.position.x > 250 :
-			$marathonist3.position.x -=  60 * delta
+		if $Marathonist.position.x > 150 :
+			$Marathonist.position.x -=  100 * delta
+		if $Marathonist2.position.x > 180 :
+			$Marathonist2.position.x -=  80 * delta
+		if $Marathonist3.position.x > 250 :
+			$Marathonist3.position.x -=  60 * delta
 		if $Player/Player.global_position.x < 60:
 			$Player/Player.global_position.x += 100 * delta
 			if $Player/Player.global_position.x > 600:
 				$Player/Player.global_position.x = 600
 	else:
-		$marathonist.position.x +=  60 * delta	
-		$marathonist2.position.x +=  80 * delta
-		$marathonist3.position.x +=  100 * delta
+		$Marathonist.position.x +=  60 * delta	
+		$Marathonist2.position.x +=  80 * delta
+		$Marathonist3.position.x +=  100 * delta
 	if $"/root/Settings".dano:
 		$ParallaxBackground.speed = 500
 	if $"/root/Settings".dash:
@@ -61,11 +62,16 @@ func _on_Timer_timeout():
 	get_tree().change_scene("res://src/Scene/Race/EndGame.tscn")
 	
 func get_runner_position():
-	if $Player.global_position.x < $marathonist.global_position.x:
+	if $Player.global_position.x < $Marathonist.global_position.x:
 		return 4
-	elif $Player.global_position.x < $marathonist2.global_position.x:
+	elif $Player.global_position.x < $Marathonist2.global_position.x:
 		return 3
-	elif $Player.global_position.x < $marathonist3.global_position.x:
+	elif $Player.global_position.x < $Marathonist3.global_position.x:
 		return 2
 	else:
 		return 1
+		
+func start_animation_group(nameGroup):
+	var nodes = get_tree().get_nodes_in_group(nameGroup)
+	for x in nodes:
+		x.start = true

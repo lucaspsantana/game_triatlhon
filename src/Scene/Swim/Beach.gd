@@ -8,7 +8,7 @@ func _ready():
 	yield(animation_transition, "animation_finished")
 	play = !play
 	$Background.play = play
-	start_animation_group('swimmers', 'swimming')
+	start_animation_group('swimmers')
 
 func _physics_process(delta):
 	if play:
@@ -39,7 +39,7 @@ func _on_Timer_timeout():
 	yield(animation_transition, "animation_finished")
 	get_tree().change_scene("res://src/Scene/Swim/EndLevel.tscn")
 
-func start_animation_group(nameGroup, nameAnimation):
+func start_animation_group(nameGroup):
 	var nodes = get_tree().get_nodes_in_group(nameGroup)
 	for x in nodes:
 		x.start = true

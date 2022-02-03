@@ -24,9 +24,7 @@ func _ready():
 	
 func _physics_process(delta):
 	animations(delta)
-	
 	input()
-	
 	#is_jump_interrupted = Input.is_action_just_released("jump") and velocity.y < 0.0
 	#not_in_floor = Input.is_action_just_pressed("down") and !$Player.is_on_floor()
 	velocity = calculate_move_velocity(velocity, speed, is_jump_interrupted, not_in_floor)

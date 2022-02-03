@@ -6,16 +6,18 @@ export var selectedColor = 0
 var animationsNumberFrames = {"idle": 5, "jump": 5, "running": 6, "swimming": 4, "ride": 6}
 var currentSpriteFrames: SpriteFrames
 onready var animationPlayer: AnimationPlayer = $AnimationPlayer
+export(String, "idle", "jump", "running", "swimming", "ride") var selectedAnimation = "idle"
 
 func _ready():
-	start(selectedColor)
+	start_animation(selectedColor)
 
 func _physics_process(delta):
 	if start:
-		$AnimatedSprite.play('swimming')
-		animationPlayer.play("wave")
+		$AnimatedSprite.play(str(selectedAnimation))
+		if selectedAnimation == "swimming":
+			animationPlayer.play("wave")
 	else:
-		$AnimatedSprite.play("idle")
+		$AnimatedSprite.play(str(selectedAnimation))
 		animationPlayer.play("RESET")
 
 func set_all_frames(index: int, colors: Array, animations, spriteFrame: SpriteFrames):
@@ -62,9 +64,7 @@ func create_frames():
 	
 	return frame
 
-func start(number):
+func start_animation(number):
 	currentSpriteFrames = create_frames()
 	set_all_frames(selectedColor, colors, animationsNumberFrames, currentSpriteFrames)
 	$AnimatedSprite.frames = currentSpriteFrames
-
-	
