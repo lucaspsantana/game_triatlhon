@@ -3,9 +3,9 @@
 [ext_resource path="res://src/Scene/Swim/EndLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprite/background.png" type="Texture" id=2]
 [ext_resource path="res://src/Actor/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/sprite/buttons/button-comecar.png" type="Texture" id=4]
-[ext_resource path="res://assets/Fonts/xolonium_64.tres" type="DynamicFont" id=5]
-[ext_resource path="res://assets/sprite/buttons/button-comecar-hover.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/buttons/buttonComecar.png" type="Texture" id=4]
+[ext_resource path="res://assets/Fonts/xolonium64.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/sprite/buttons/buttonComecarHover.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

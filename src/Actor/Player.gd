@@ -25,31 +25,31 @@ func set_all_frames(index: int, colors: Array, animations, spriteFrame: SpriteFr
 	var x = 0
 	while x <  animations.get("idle"):
 		spriteFrame.add_frame(
-				"idle", load(str(path,"/idle_",(x + 1),".png")), x
+				"idle", load(str(path,"/idle",(x + 1),".png")), x
 			)
 		x = x + 1
 	x = 0
 	while x <  animations.get("ride"):
 		spriteFrame.add_frame(
-				"ride", load(str(path,"/ride_",(x + 1),".png")), x
+				"ride", load(str(path,"/ride",(x + 1),".png")), x
 			)
 		x = x + 1
 	x = 0
 	while x <  animations.get("running"):
 		spriteFrame.add_frame(
-				"running", load(str(path,"/running_",(x + 1),".png")), x
+				"running", load(str(path,"/running",(x + 1),".png")), x
 			)
 		x = x + 1
 	x = 0
 	while x < animations.get("swimming"):
 		spriteFrame.add_frame(
-				"swimming", load(str(path,"/swimming_",(x + 1),".png")), x
+				"swimming", load(str(path,"/swimming",(x + 1),".png")), x
 			)
 		x = x + 1
 	x = 0;
 	while x < animations.get("jump"):
 		spriteFrame.add_frame(
-				"jump", load(str(path,"/jump_",(x + 1),".png")), x
+				"jump", load(str(path,"/jump",(x + 1),".png")), x
 			)
 		x = x + 1
 	x = 0

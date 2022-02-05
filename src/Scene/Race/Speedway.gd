@@ -7,21 +7,21 @@ var obstacules
 
 func _ready():
 	var current_position =  $"/root/Settings".final_position 
-	$ParallaxBackground.speed = 500
+	$ParallaxBackground.speed = 550
 	match current_position:
 		4:
 			$Player/Player.global_position.x = 120
 		3:
-			$Player/Player.global_position.x = 160
+			$Player/Player.global_position.x = 170
 		2:
-			$Player/Player.global_position.x = 200
+			$Player/Player.global_position.x = 210
 		1:
-			$ParallaxBackground.speed = 600
+			$ParallaxBackground.speed = 700
 	animation_transition.play("fade_out")
 	yield(animation_transition, "animation_finished")
 	play = !play
 	$ParallaxBackground.play = play
-	start_animation_group("marathonist")
+	#start_animation_group("marathonist")
 
 func _physics_process(delta):
 	time += 1 * delta
@@ -40,18 +40,19 @@ func _physics_process(delta):
 			$Marathonist2.position.x -=  80 * delta
 		if $Marathonist3.position.x > 250 :
 			$Marathonist3.position.x -=  60 * delta
-		if $Player/Player.global_position.x < 60:
-			$Player/Player.global_position.x += 100 * delta
-			if $Player/Player.global_position.x > 600:
-				$Player/Player.global_position.x = 600
+		#if $Player/Player.global_position.x < 60:
+		$Player/Player.global_position.x += 100 * delta
+		if $Player/Player.global_position.x > 700:
+			$Player/Player.global_position.x = 700
+		print($Player/Player.global_position)
 	else:
-		$Marathonist.position.x +=  60 * delta	
-		$Marathonist2.position.x +=  80 * delta
-		$Marathonist3.position.x +=  100 * delta
+		$Marathonist.position.x +=  50 * delta	
+		$Marathonist2.position.x +=  70 * delta
+		$Marathonist3.position.x +=  90 * delta
 	if $"/root/Settings".dano:
-		$ParallaxBackground.speed = 500
+		$ParallaxBackground.speed = 550
 	if $"/root/Settings".dash:
-		$ParallaxBackground.speed = 600
+		$ParallaxBackground.speed = 700
 	$"/root/Settings".parallax_speed_obstacule = $ParallaxBackground.speed
 
 func _on_Timer_timeout():
@@ -71,7 +72,7 @@ func get_runner_position():
 	else:
 		return 1
 		
-func start_animation_group(nameGroup):
-	var nodes = get_tree().get_nodes_in_group(nameGroup)
-	for x in nodes:
-		x.start = true
+#func start_animation_group(nameGroup):
+#	var nodes = get_tree().get_nodes_in_group(nameGroup)
+#	for x in nodes:
+#		x.start = true

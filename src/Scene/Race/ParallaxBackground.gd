@@ -8,7 +8,7 @@ var play = false
 func _process(delta):
 	if play:
 		if $"/root/Settings".dano:
-			speed = speed - 100
+			speed = speed - 50
 			$"/root/Settings".dano = 0
 		if speed <= 0:
 			speed = 0

@@ -15,7 +15,6 @@ var water = preload("res://src/Object/Water.tscn")
 func _ready():
 	rng.randomize()
 	rng2.randomize()
-	
 	rng3.randomize()
 	rng4.randomize()
 	
@@ -39,11 +38,8 @@ func _ready():
 	$ParallaxLayer.add_child(sceneMosquito)
 	print("mosquito "+str(radom_mosquito))
 	print(posMosquito[radom_mosquito].name)
-	
 
-	
 	var pos = get_tree().get_nodes_in_group("water");
-	
 	#Criando frutas em um dos lugares aleatorios		
 	var random_number = rng.randi_range(0, 2)
 	var index_random =rng2.randi_range(0, 2)
@@ -51,7 +47,7 @@ func _ready():
 	var scene = node.instance()
 	scene.global_position = pos[random_number].position
 	$ParallaxLayer.add_child(scene)
-	
+
 func _process(delta):
 	speed = $"/root/Settings".parallax_speed_obstacule
 	parallax_offset -= delta * speed
@@ -59,7 +55,6 @@ func _process(delta):
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
-
 
 func _on_Obstacules_tree_exiting():
 	queue_free()

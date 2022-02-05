@@ -1,15 +1,18 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/Scene/Race/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprite/correr-3.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprite/blue/jump_2.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprite/correr-5.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprite/correr-6.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprite/correr-7.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprite/blue/jump_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprite/correr-4.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprite/correr-2.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprite/botao-pular.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/blue/running5.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/blue/jump2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/blue/running4.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/blue/running6.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/blue/running2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite/blue/jump1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite/blue/running1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite/blue/running3.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite/botao_pular.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite/blue/jump4.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite/blue/jump5.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite/blue/jump3.png" type="Texture" id=13]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -19,15 +22,15 @@ height = 204.185
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "run",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -55,7 +58,7 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 3 )
-animation = "run"
+animation = "jump"
 
 [connection signal="button_up" from="jump" to="." method="_on_jump_button_up"]
 [connection signal="pressed" from="jump" to="." method="_on_jump_pressed"]
