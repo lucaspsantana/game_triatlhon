@@ -12,7 +12,6 @@ var dash_timer = 0
 
 func _ready():
 	speed = 100
-	pass
 
 func _process(delta):
 	if play:
@@ -28,7 +27,6 @@ func _process(delta):
 				speed = 0
 		if speed >= speed_limit:
 			$"/root/Settings".swim = 0
-		
 		#print(speed)
 		parallax_offset -= delta * speed
 		set_scroll_offset(Vector2(parallax_offset, 0))

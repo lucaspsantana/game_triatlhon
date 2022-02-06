@@ -7,5 +7,4 @@ var final_position = 2
 var dash = 0
 var dano = 0
 var points = 0
-
 var pedal = 0

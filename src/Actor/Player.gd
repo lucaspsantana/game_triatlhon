@@ -20,8 +20,8 @@ func _physics_process(delta):
 		$AnimatedSprite.play(str(selectedAnimation))
 		animationPlayer.play("RESET")
 
-func set_all_frames(index: int, colors: Array, animations, spriteFrame: SpriteFrames):
-	var path = str("res://assets/sprite/", colors[index])
+func set_all_frames(index: int, colorsArray: Array, animations, spriteFrame: SpriteFrames):
+	var path = str("res://assets/sprite/", colorsArray[index])
 	var x = 0
 	while x <  animations.get("idle"):
 		spriteFrame.add_frame(
@@ -61,10 +61,9 @@ func create_frames():
 	frame.add_animation("running")
 	frame.add_animation("swimming")
 	frame.add_animation("ride")
-	
 	return frame
 
 func start_animation(number):
 	currentSpriteFrames = create_frames()
-	set_all_frames(selectedColor, colors, animationsNumberFrames, currentSpriteFrames)
+	set_all_frames(number, colors, animationsNumberFrames, currentSpriteFrames)
 	$AnimatedSprite.frames = currentSpriteFrames

@@ -102,7 +102,7 @@ autostart = true
 position = Vector2( 659, 786 )
 frames = SubResource( 3 )
 animation = "run"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Player" parent="." groups=["marathonist"] instance=ExtResource( 5 )]
@@ -112,14 +112,12 @@ position = Vector2( 6, 1 )
 position = Vector2( 641, 886 )
 frames = SubResource( 4 )
 animation = "run"
-frame = 5
 playing = true
 
 [node name="Marathonist3" type="AnimatedSprite" parent="." groups=["marathonist"]]
 position = Vector2( 638, 948 )
 frames = SubResource( 5 )
 animation = "run"
-frame = 5
 playing = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

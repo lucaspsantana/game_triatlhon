@@ -18,5 +18,3 @@ func _process(delta):
 		print("Dano "+str($"/root/Settings".dano))
 		parallax_offset -= delta * speed
 		set_scroll_offset(Vector2(parallax_offset, 0))
-
-

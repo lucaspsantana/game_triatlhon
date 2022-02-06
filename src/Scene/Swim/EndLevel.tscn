@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Scene/Swim/EndLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprite/background.png" type="Texture" id=2]
@@ -6,14 +6,6 @@
 [ext_resource path="res://assets/sprite/buttons/buttonComecar.png" type="Texture" id=4]
 [ext_resource path="res://assets/Fonts/xolonium64.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/sprite/buttons/buttonComecarHover.png" type="Texture" id=6]
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -100,9 +92,6 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 624.089, 703.153 )

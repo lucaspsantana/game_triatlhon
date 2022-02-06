@@ -6,7 +6,6 @@ var speed = 700
 var speed_limit = speed
 var play = false
 
-
 func _ready():
 	speed = 600
 	$"/root/Settings".pedal = 0
@@ -25,9 +24,6 @@ func _process(delta):
 				speed = 0
 		if speed >= speed_limit:
 			$"/root/Settings".pedal = 0
-		
 		#print(speed)
 		parallax_offset -= delta * speed
 		set_scroll_offset(Vector2(parallax_offset, 0))
-
-

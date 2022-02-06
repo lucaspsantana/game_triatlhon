@@ -17,13 +17,13 @@ var parallax
 
 var velocity: = Vector2.ZERO
 
-func _ready():
+#func _ready():
 	#connect("fall", self, "_fall")
 	#parallax = get_parent().get_node("floor")
-	pass
+	#pass
 	
 func _physics_process(delta):
-	animations(delta)
+	animations()
 	input()
 	#is_jump_interrupted = Input.is_action_just_released("jump") and velocity.y < 0.0
 	#not_in_floor = Input.is_action_just_pressed("down") and !$Player.is_on_floor()
@@ -31,7 +31,7 @@ func _physics_process(delta):
 	velocity = $Player.move_and_slide(velocity, FLOOR_NORMAL)
 	
 
-func animations(delta):
+func animations():
 	$Player/CollisionShape2D2.position.y = 0
 	$Player/CollisionShape2D2.scale.y = 1
 	if velocity.y < 0:

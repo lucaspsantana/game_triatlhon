@@ -2,7 +2,6 @@ extends ParallaxBackground
 
 var in_hole = false
 var paralax
-signal fall
 var speed = 600
 
 var parallax_offset = 0
@@ -33,7 +32,6 @@ func _ready():
 	var nodeMosquito = preload("res://src/Object/Mosquito.tscn")
 	var sceneMosquito = nodeMosquito.instance()
 	var posMosquito = get_tree().get_nodes_in_group("mosquito")
-	var sizeMosquito = posMosquito.size() - 1
 	sceneMosquito.global_position = posMosquito[radom_mosquito].position
 	$ParallaxLayer.add_child(sceneMosquito)
 	print("mosquito "+str(radom_mosquito))
@@ -42,7 +40,6 @@ func _ready():
 	var pos = get_tree().get_nodes_in_group("water");
 	#Criando frutas em um dos lugares aleatorios		
 	var random_number = rng.randi_range(0, 2)
-	var index_random =rng2.randi_range(0, 2)
 	var node = water
 	var scene = node.instance()
 	scene.global_position = pos[random_number].position
