@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Fonts/score.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/GUI/Score.gd" type="Script" id=2]
+
+[node name="Score" type="CanvasLayer"]
+pause_mode = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 42.0 ],
+"_edit_vertical_guides_": [ 63.0, 1922.0, 1858.0, 963.0 ]
+}
+
+[node name="distance" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 43.0
+margin_right = 252.0
+margin_bottom = 91.0
+custom_fonts/font = ExtResource( 1 )
+text = "Distância: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="velocity" type="Label" parent="."]
+margin_left = 1474.0
+margin_top = 43.0
+margin_right = 1810.0
+margin_bottom = 91.0
+custom_fonts/font = ExtResource( 1 )
+text = "Velocidade:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="."]
+margin_left = 937.0
+margin_top = 42.0
+margin_right = 986.0
+margin_bottom = 90.0
+custom_fonts/font = ExtResource( 1 )
+text = "60"
+__meta__ = {
+"_edit_use_anchors_": false
+}

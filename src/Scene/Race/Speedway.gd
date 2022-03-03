@@ -4,6 +4,7 @@ onready var animation_transition: AnimationPlayer = $Transition/AnimationPlayer
 var play = false 
 var time = 0.0
 var obstacules 
+var distance = 0
 
 func _ready():
 	var current_position =  $"/root/Settings".final_position 
@@ -26,7 +27,7 @@ func _ready():
 func _physics_process(delta):
 	time += 1 * delta
 	if time > 5:
-		print("criou")
+		#print("criou")
 		var node = preload("res://src/Object/Obstacules.tscn")
 		var scene = node.instance()
 		get_parent().add_child(scene)
@@ -44,7 +45,7 @@ func _physics_process(delta):
 		$Player/Player.global_position.x += 100 * delta
 		if $Player/Player.global_position.x > 700:
 			$Player/Player.global_position.x = 700
-		print($Player/Player.global_position)
+		#print($Player/Player.global_position)
 	else:
 		$Marathonist.position.x +=  50 * delta	
 		$Marathonist2.position.x +=  70 * delta
@@ -54,10 +55,13 @@ func _physics_process(delta):
 	if $"/root/Settings".dash:
 		$ParallaxBackground.speed = 700
 	$"/root/Settings".parallax_speed_obstacule = $ParallaxBackground.speed
+	$Score.setValueScore(distance, speed_player * 0.1, $Timer.time_left)
+	distance += 0.01
 
 func _on_Timer_timeout():
+	$Timer.stop()
 	$"/root/Settings".final_position = get_runner_position()
-	print($"/root/Settings".final_position)
+	#qprint($"/root/Settings".final_position)
 	animation_transition.play("fade_in")
 	yield(animation_transition, "animation_finished")
 	get_tree().change_scene("res://src/Scene/Race/EndGame.tscn")

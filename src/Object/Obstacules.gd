@@ -24,8 +24,8 @@ func _ready():
 	var posrock = get_tree().get_nodes_in_group("obstacules")
 	scenerock.global_position = posrock[rock_random].position
 	$ParallaxLayer.add_child(scenerock)
-	print("rock "+str(rock_random))
-	print(posrock[rock_random].name)
+	#print("rock "+str(rock_random))
+	#print(posrock[rock_random].name)
 	
 	#Criando mosquitos em um dos lugares aleatorios	
 	var radom_mosquito = rng3.randi_range(0,2)
@@ -34,8 +34,8 @@ func _ready():
 	var posMosquito = get_tree().get_nodes_in_group("mosquito")
 	sceneMosquito.global_position = posMosquito[radom_mosquito].position
 	$ParallaxLayer.add_child(sceneMosquito)
-	print("mosquito "+str(radom_mosquito))
-	print(posMosquito[radom_mosquito].name)
+	#print("mosquito "+str(radom_mosquito))
+	#print(posMosquito[radom_mosquito].name)
 
 	var pos = get_tree().get_nodes_in_group("water");
 	#Criando frutas em um dos lugares aleatorios		

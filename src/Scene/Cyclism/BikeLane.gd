@@ -2,6 +2,7 @@ extends Node2D
 
 onready var animation: AnimationPlayer = $Transition/AnimationPlayer
 var play = false
+var distance = 0
 
 func _ready():
 	var current_position =  $"/root/Settings".final_position 
@@ -39,8 +40,11 @@ func _physics_process(delta):
 			$Cyclist.position.x +=  60 * delta	
 			$Cyclist2.position.x +=  80 * delta
 			$Cyclist3.position.x +=  100 * delta
+		$Score.setValueScore(distance, speed_player * 0.1, $Timer.time_left)
+		distance += 0.01
 
 func _on_Timer_timeout():
+	$Timer.stop()
 	if $Player.global_position.x < $Cyclist.position.x:
 		$"/root/Settings".final_position = 4
 	elif $Player.global_position.x < $Cyclist2.position.x:

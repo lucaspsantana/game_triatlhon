@@ -15,6 +15,6 @@ func _process(delta):
 		if $"/root/Settings".dash:
 			speed = speed_limit
 			$"/root/Settings".dash = 0
-		print("Dano "+str($"/root/Settings".dano))
+		#print("Dano "+str($"/root/Settings".dano))
 		parallax_offset -= delta * speed
 		set_scroll_offset(Vector2(parallax_offset, 0))
