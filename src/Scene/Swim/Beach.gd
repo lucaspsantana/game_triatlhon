@@ -14,17 +14,17 @@ func _ready():
 func _physics_process(delta):
 	if play:
 		var speed_player = $Background.speed
-		if speed_player > 100:
+		if speed_player > 145:
 			if $swimmer.position.x > 180 :
-				$swimmer.position.x -=  100 * delta
+				$swimmer.position.x -=  50 * delta
 			if $swimmer2.position.x > 300 :
-				$swimmer2.position.x -=  80 * delta
+				$swimmer2.position.x -=  40 * delta
 			if $swimmer3.position.x > 400 :
-				$swimmer3.position.x -=  60 * delta
+				$swimmer3.position.x -=  30 * delta
 		else:
-			$swimmer.position.x +=  60 * delta	
-			$swimmer2.position.x +=  80 * delta
-			$swimmer3.position.x +=  100 * delta
+			$swimmer.position.x +=  80 * delta	
+			$swimmer2.position.x +=  100 * delta
+			$swimmer3.position.x +=  120 * delta
 		$Score.setValueScore(distance, speed_player * 0.2, $Timer.time_left)
 		distance += 0.01
 

@@ -16,3 +16,9 @@ motion_mirroring = Vector2( 1900, 0 )
 position = Vector2( 959.645, 542.173 )
 scale = Vector2( 2.48952, 2.02052 )
 texture = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
