@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Scene/Swim/EndLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprite/background.png" type="Texture" id=2]
@@ -9,45 +9,6 @@
 
 [sub_resource type="Animation" id=4]
 length = 0.001
-
-[sub_resource type="Animation" id=3]
-resource_name = "button_fade-in"
-tracks/0/type = "value"
-tracks/0/path = NodePath("start:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("start:rect_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.5, 1.5 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("start:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [sub_resource type="Animation" id=2]
 resource_name = "fade-out"
@@ -78,20 +39,6 @@ __meta__ = {
 [node name="background" type="Sprite" parent="TextureRect"]
 position = Vector2( 1920.69, 541.922 )
 texture = ExtResource( 2 )
-
-[node name="start" type="TextureButton" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 865.815
-margin_top = 652.45
-margin_right = 1200.82
-margin_bottom = 772.45
-rect_scale = Vector2( 1e-05, 1e-05 )
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 624.089, 703.153 )
@@ -143,10 +90,12 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
-anims/button_fade-in = SubResource( 3 )
 anims/fade-out = SubResource( 2 )
 
-[connection signal="button_down" from="start" to="." method="_on_start_button_down"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="pressed" from="InicialMessage/quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Player"]

@@ -14,7 +14,7 @@ func _ready():
 func _physics_process(delta):
 	if play:
 		var speed_player = $Background.speed
-		if speed_player > 145:
+		if speed_player > 100:
 			if $swimmer.position.x > 180 :
 				$swimmer.position.x -=  50 * delta
 			if $swimmer2.position.x > 300 :
