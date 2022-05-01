@@ -26,7 +26,6 @@ func _process(delta):
 		parallax_offset -= speed * delta
 		set_scroll_offset(Vector2(parallax_offset, 0))
 
-
 func _on_Timer_timeout():
 	decrement = true
 

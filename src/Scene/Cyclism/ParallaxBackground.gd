@@ -5,25 +5,26 @@ var time = 0.0
 var speed = 700
 var speed_limit = speed
 var play = false
+var decrement = false
 
 func _ready():
-	speed = 600
-	$"/root/Settings".pedal = 0
+	speed = 0
 
 func _process(delta):
 	if play:
-		if speed <= speed_limit:
-			if $"/root/Settings".pedal >= 40:
-				#print($"/root/Settings".pedal)
-				speed = speed + $"/root/Settings".pedal * delta
-				$"/root/Settings".pedal -= 40
-		if speed > 0:
-			#time += 10 * delta 
-			speed = speed - 35 * delta
-			if speed <= 0:
-				speed = 0
-		if speed >= speed_limit:
-			$"/root/Settings".pedal = 0
-		#print(speed)
-		parallax_offset -= delta * speed
+		if decrement:
+			speed = speed - 30
+			decrement = false 
+			print(speed)
+		else:
+			speed = speed + $"/root/Settings".swim
+		$"/root/Settings".swim = 0		
+		if speed > speed_limit:
+			speed = speed_limit
+		if speed < 0:
+			speed = 0
+		parallax_offset -= speed * delta
 		set_scroll_offset(Vector2(parallax_offset, 0))
+
+func _on_Timer_timeout():
+	decrement = true
