@@ -16,11 +16,14 @@ var faultColor = 'd85b55'
 func _ready():
 	rng.randomize()
 	randomIndex = rng.randi_range(0,1)
+	if(OS.get_name() != "Windows"):
+		swimIncrement = swimIncrement * 3
+		pedalIncrement = pedalIncrement * 3
 
 func _physics_process(delta):
 	timeToActive += 1
 	getEventInput()
-	if timeToActive == 20:
+	if timeToActive == 10:
 		get_node(str(buttons[randomIndex])).set_modulate(str(colorActive))
 	if timeToActive == 40:
 		get_node(str(buttons[randomIndex])).set_modulate(str(defaultColor))

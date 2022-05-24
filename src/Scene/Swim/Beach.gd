@@ -9,7 +9,7 @@ func _ready():
 	yield(animation_transition, "animation_finished")
 	play = !play
 	$Background.play = play
-	start_animation_group('swimmers')
+	start_animation_group('swimmers', true)
 
 func _physics_process(delta):
 	if play:
@@ -30,11 +30,12 @@ func _physics_process(delta):
 
 func _on_Timer_timeout():
 	$Timer.stop()
-	if $Player.global_position.x < $swimmer.position.x:
+	start_animation_group('swimmers', false)
+	if $Player.global_position.x < $swimmer.global_position.x:
 		$"/root/Settings".final_position = 4
-	elif $Player.global_position.x < $swimmer2.position.x:
+	elif $Player.global_position.x < $swimmer2.global_position.x:
 		$"/root/Settings".final_position = 3
-	elif $Player.global_position.x < $swimmer3.position.x:
+	elif $Player.global_position.x < $swimmer3.global_position.x:
 		$"/root/Settings".final_position = 2
 	else:
 		$"/root/Settings".final_position = 1
@@ -43,7 +44,7 @@ func _on_Timer_timeout():
 	yield(animation_transition, "animation_finished")
 	get_tree().change_scene("res://src/Scene/Swim/EndLevel.tscn")
 
-func start_animation_group(nameGroup):
+func start_animation_group(nameGroup, start):
 	var nodes = get_tree().get_nodes_in_group(nameGroup)
 	for x in nodes:
-		x.start = true
+		x.start = start

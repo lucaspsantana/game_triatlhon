@@ -4,7 +4,7 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
-[node name="Obstacules" type="ParallaxBackground"]
+[node name="Obstacules" type="ParallaxBackground" groups=["obstacule"]]
 script = ExtResource( 1 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]

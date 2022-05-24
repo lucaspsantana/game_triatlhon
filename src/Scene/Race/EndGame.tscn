@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Scene/Race/EndGame.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprite/button-ir-de-novo.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprite/win.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite/button-ir-de-novo-hover.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite/button-ir-casa.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite/button-ir-de-novo-hover_1.png" type="Texture" id=6]
 
 [node name="EndGame" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_horizontal_guides_": [ 714.0, 842.0 ],
 "_edit_use_anchors_": false
 }
 
@@ -14,10 +20,38 @@ __meta__ = {
 margin_right = 1920.0
 margin_bottom = 1081.0
 color = Color( 0.47451, 0.47451, 0.47451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Msg" type="Label" parent="."]
-margin_left = 596.112
-margin_top = 407.54
-margin_right = 768.112
-margin_bottom = 421.54
-rect_scale = Vector2( 4, 4 )
+[node name="Win" type="Sprite" parent="."]
+position = Vector2( 973, 553 )
+texture = ExtResource( 3 )
+
+[node name="Again" type="TextureButton" parent="."]
+margin_left = 519.0
+margin_top = 714.0
+margin_right = 963.0
+margin_bottom = 841.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Home" type="TextureButton" parent="."]
+margin_left = 990.0
+margin_top = 713.0
+margin_right = 1407.0
+margin_bottom = 841.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Again" to="." method="_on_Again_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/swimming.mp3-36056778d9db36caf1f1934ddb6b7dc6.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/swimming.mp3"
+dest_files=[ "res://.import/swimming.mp3-36056778d9db36caf1f1934ddb6b7dc6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

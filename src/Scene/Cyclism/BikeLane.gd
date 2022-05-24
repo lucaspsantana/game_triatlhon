@@ -15,12 +15,13 @@ func _ready():
 		2:
 			$Player.global_position.x = 200
 		1:
+			$Player.global_position.x = 260
 			$ParallaxBackground.speed = 700
 	animation.play("fade_out")
 	yield(animation, "animation_finished")
 	play = !play
 	$ParallaxBackground.play = play
-	start_animation_group("cyclist")
+	start_animation_group("cyclist", true)
 
 func _physics_process(delta):
 	if play:
@@ -45,6 +46,7 @@ func _physics_process(delta):
 
 func _on_Timer_timeout():
 	$Timer.stop()
+	start_animation_group("cyclist", false)
 	if $Player.global_position.x < $Cyclist.position.x:
 		$"/root/Settings".final_position = 4
 	elif $Player.global_position.x < $Cyclist2.position.x:
@@ -58,7 +60,9 @@ func _on_Timer_timeout():
 	yield(animation, "animation_finished")
 	get_tree().change_scene("res://src/Scene/Race/Speedway.tscn")
 
-func start_animation_group(nameGroup):
+#func initial_position():
+	
+func start_animation_group(nameGroup, start):
 	var nodes = get_tree().get_nodes_in_group(nameGroup)
 	for x in nodes:
-		x.start = true
+		x.start = start

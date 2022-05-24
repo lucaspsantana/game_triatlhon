@@ -17,7 +17,7 @@ _global_script_class_icons={
 config/name="Triatlo"
 config/description="Little game about health"
 run/main_scene="res://src/Scene/Swim/Beach.tscn"
-config/icon="res://assets/sprite/icon.png"
+config/icon="res://icon.png"
 
 [autoload]
 

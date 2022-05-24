@@ -17,6 +17,7 @@ func _ready():
 		2:
 			$Player/Player.global_position.x = 210
 		1:
+			$Player/Player.global_position.x = 260
 			$ParallaxBackground.speed = 700
 	animation_transition.play("fade_out")
 	yield(animation_transition, "animation_finished")
@@ -24,14 +25,13 @@ func _ready():
 	$ParallaxBackground.play = play
 	#start_animation_group("marathonist")
 
-func _physics_process(delta):
+func _process(delta):
 	time += 1 * delta
 	if time > 5:
 		#print("criou")
 		var node = preload("res://src/Object/Obstacules.tscn")
 		var scene = node.instance()
 		get_parent().add_child(scene)
-		obstacules = scene
 		time = 0
 	var speed_player = $ParallaxBackground.speed
 	if speed_player > 500:
@@ -61,9 +61,12 @@ func _physics_process(delta):
 func _on_Timer_timeout():
 	$Timer.stop()
 	$"/root/Settings".final_position = get_runner_position()
-	#qprint($"/root/Settings".final_position)
+	print("final position " + str($"/root/Settings".final_position))
 	animation_transition.play("fade_in")
 	yield(animation_transition, "animation_finished")
+	var obstaculeNode = get_tree().get_nodes_in_group("obstacule")
+	for n in obstaculeNode:
+		n.free()
 	get_tree().change_scene("res://src/Scene/Race/EndGame.tscn")
 	
 func get_runner_position():
@@ -73,8 +76,7 @@ func get_runner_position():
 		return 3
 	elif $Player.global_position.x < $Marathonist3.global_position.x:
 		return 2
-	else:
-		return 1
+	return 1
 		
 #func start_animation_group(nameGroup):
 #	var nodes = get_tree().get_nodes_in_group(nameGroup)
