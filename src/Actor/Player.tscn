@@ -37,14 +37,14 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 10 ), null, null, null, null ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "swimming",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "ride",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 21 ) ],
@@ -52,9 +52,9 @@ animations = [ {
 "name": "running",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 23 ) ],
+"frames": [ ExtResource( 10 ), null, null, null, null ],
 "loop": true,
-"name": "ride",
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -225,6 +225,7 @@ frames = SubResource( 2 )
 animation = "running"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+method_call_mode = 1
 anims/RESET = SubResource( 3 )
 anims/wave = SubResource( 4 )
 

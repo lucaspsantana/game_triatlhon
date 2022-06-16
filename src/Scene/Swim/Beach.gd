@@ -9,7 +9,9 @@ func _ready():
 	yield(animation_transition, "animation_finished")
 	play = !play
 	$Background.play = play
+	play_start_beep()
 	start_animation_group('swimmers', true)
+	play_wave_song()
 
 func _physics_process(delta):
 	if play:
@@ -48,3 +50,11 @@ func start_animation_group(nameGroup, start):
 	var nodes = get_tree().get_nodes_in_group(nameGroup)
 	for x in nodes:
 		x.start = start
+		
+func play_wave_song():
+	if $"/root/SoundConfig".enable_music:
+		$wave.play()
+
+func play_start_beep():
+	if $"/root/SoundConfig".enable_sound:
+		$startBeep.play()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/backgound_melody-loop-90-bpm.mp3-f8a819cc38fbae5e11f3fcf811088f71.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/backgound_melody-loop-90-bpm.mp3"
+dest_files=[ "res://.import/backgound_melody-loop-90-bpm.mp3-f8a819cc38fbae5e11f3fcf811088f71.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

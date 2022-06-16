@@ -67,3 +67,4 @@ func start_animation(number):
 	currentSpriteFrames = create_frames()
 	set_all_frames(number, colors, animationsNumberFrames, currentSpriteFrames)
 	$AnimatedSprite.frames = currentSpriteFrames
+	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Object/Rock.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprite/rock.png" type="Texture" id=2]
+[ext_resource path="res://src/Others/ObjectSound.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 26.4764
@@ -9,6 +10,7 @@ radius = 26.4764
 [node name="Rock" type="Area2D"]
 collision_layer = 2
 script = ExtResource( 1 )
+object_type = "obstacle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -17,4 +19,8 @@ shape = SubResource( 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
+[node name="ObjectSound" parent="." instance=ExtResource( 3 )]
+
 [connection signal="body_entered" from="." to="." method="_on_Rock_body_entered"]
+
+[editable path="ObjectSound"]

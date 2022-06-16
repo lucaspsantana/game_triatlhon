@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/Scene/Race/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprite/blue/running5.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/sprite/blue/jump4.png" type="Texture" id=11]
 [ext_resource path="res://assets/sprite/blue/jump5.png" type="Texture" id=12]
 [ext_resource path="res://assets/sprite/blue/jump3.png" type="Texture" id=13]
+[ext_resource path="res://assets/sounds/jump.wav" type="AudioStream" id=14]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -62,6 +63,9 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 3 )
 animation = "jump"
+
+[node name="jumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
 
 [connection signal="button_up" from="jump" to="." method="_on_jump_button_up"]
 [connection signal="pressed" from="jump" to="." method="_on_jump_pressed"]

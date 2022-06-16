@@ -101,3 +101,6 @@ func _on_jump_button_up():
 	else:
 		is_jump_interrupted = false
 	
+func play_jump_sound():
+	if $"/root/SoundConfig".enable_sound:
+		$jumpSound.play()

@@ -1,8 +1,4 @@
-extends Area2D
-
-func start(pos):
-	global_position = pos
+extends "res://src/Object/Object.gd"
 
 func _on_Rock_body_entered(body):
-	$"/root/Settings".dano = 1
-	queue_free();
+	detect_colision($ObjectSound/AudioStreamPlayer)

@@ -22,6 +22,7 @@ func _ready():
 	play = !play
 	$ParallaxBackground.play = play
 	start_animation_group("cyclist", true)
+	play_bike_ride()
 
 func _physics_process(delta):
 	if play:
@@ -66,3 +67,7 @@ func start_animation_group(nameGroup, start):
 	var nodes = get_tree().get_nodes_in_group(nameGroup)
 	for x in nodes:
 		x.start = start
+		
+func play_bike_ride():
+	if $"/root/SoundConfig".enable_sound:
+		$RideBike.play()

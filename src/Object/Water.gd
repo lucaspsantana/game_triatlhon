@@ -1,8 +1,4 @@
-extends Area2D
-
-func start(pos):
-	global_position = pos
+extends "res://src/Object/Object.gd"
 
 func _on_Water_body_entered(body):
-	$"/root/Settings".dash = 1
-	queue_free();
+	detect_colision($ObjectSound/AudioStreamPlayer)
