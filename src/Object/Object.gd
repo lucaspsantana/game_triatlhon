@@ -14,7 +14,8 @@ func detect_colision(sound: AudioStreamPlayer):
 	else:
 		audioStreamSample = load("res://assets/sounds/collect-5.wav")
 		$"/root/Settings".dash = 1
-	sound.stream = audioStreamSample
-	sound.play()
-	yield(sound, "finished")
+	if $"/root/SoundConfig".enable_sound:
+		sound.stream = audioStreamSample
+		sound.play()
+		yield(sound, "finished")
 	queue_free()

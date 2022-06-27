@@ -6,3 +6,6 @@ func _ready():
 func play_background_music():
 	if $"/root/SoundConfig".enable_music:
 		$backgroundMusic.play()
+	else:
+		$backgroundMusic.stop()
+	
