@@ -8,17 +8,16 @@ var distance = 0
 
 func _ready():
 	var current_position =  $"/root/Settings".final_position 
-	$ParallaxBackground.speed = 550
+	$ParallaxBackground.speed = 500
 	match current_position:
 		4:
 			$Player/Player.global_position.x = 120
 		3:
-			$Player/Player.global_position.x = 170
+			$Player/Player.global_position.x = 440
 		2:
-			$Player/Player.global_position.x = 210
+			$Player/Player.global_position.x = 550
 		1:
-			$Player/Player.global_position.x = 260
-			$ParallaxBackground.speed = 700
+			$Player/Player.global_position.x = 650
 	animation_transition.play("fade_out")
 	yield(animation_transition, "animation_finished")
 	play = !play

@@ -100,25 +100,27 @@ wait_time = 40.0
 autostart = true
 
 [node name="Marathonist" type="AnimatedSprite" parent="." groups=["marathonist"]]
-position = Vector2( 659, 786 )
+position = Vector2( 424, 786 )
 frames = SubResource( 3 )
 animation = "run"
-frame = 2
+frame = 5
 playing = true
 
 [node name="Player" parent="." groups=["marathonist"] instance=ExtResource( 5 )]
 position = Vector2( 6, 1 )
 
 [node name="Marathonist2" type="AnimatedSprite" parent="." groups=["marathonist"]]
-position = Vector2( 641, 886 )
+position = Vector2( 498, 874 )
 frames = SubResource( 4 )
 animation = "run"
+frame = 3
 playing = true
 
 [node name="Marathonist3" type="AnimatedSprite" parent="." groups=["marathonist"]]
-position = Vector2( 638, 948 )
+position = Vector2( 606, 948 )
 frames = SubResource( 5 )
 animation = "run"
+frame = 3
 playing = true
 
 [node name="Score" parent="." instance=ExtResource( 24 )]

@@ -6,23 +6,22 @@ var distance = 0
 
 func _ready():
 	var current_position =  $"/root/Settings".final_position 
-	$ParallaxBackground.speed = 600
+	$ParallaxBackground.speed = 300
 	match current_position:
 		4:
 			$Player.global_position.x = 120
 		3:
-			$Player.global_position.x = 160
+			$Player.global_position.x = 470
 		2:
-			$Player.global_position.x = 200
+			$Player.global_position.x = 550
 		1:
-			$Player.global_position.x = 260
-			$ParallaxBackground.speed = 700
+			$Player.global_position.x = 590
 	animation.play("fade_out")
 	yield(animation, "animation_finished")
 	play = !play
 	$ParallaxBackground.play = play
 	start_animation_group("cyclist", true)
-	play_bike_ride()
+	play_ride_bike()
 
 func _physics_process(delta):
 	if play:
@@ -68,6 +67,6 @@ func start_animation_group(nameGroup, start):
 	for x in nodes:
 		x.start = start
 		
-func play_bike_ride():
+func play_ride_bike():
 	if $"/root/SoundConfig".enable_sound:
 		$RideBike.play()

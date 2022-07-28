@@ -26,7 +26,7 @@ wait_time = 30.0
 autostart = true
 
 [node name="Cyclist" parent="." groups=["Cyclist"] instance=ExtResource( 2 )]
-position = Vector2( 610, 750 )
+position = Vector2( 456, 774 )
 selectedColor = 1
 selectedAnimation = "ride"
 
@@ -35,12 +35,12 @@ position = Vector2( 612, 788 )
 selectedAnimation = "ride"
 
 [node name="Cyclist2" parent="." groups=["Cyclist"] instance=ExtResource( 2 )]
-position = Vector2( 610, 847 )
+position = Vector2( 501, 833 )
 selectedColor = 2
 selectedAnimation = "ride"
 
 [node name="Cyclist3" parent="." groups=["Cyclist"] instance=ExtResource( 2 )]
-position = Vector2( 608, 901 )
+position = Vector2( 577, 893 )
 selectedColor = 3
 selectedAnimation = "ride"
 

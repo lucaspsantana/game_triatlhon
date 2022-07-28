@@ -43,3 +43,15 @@ text = "60"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="position" type="Label" parent="."]
+visible = false
+margin_left = 1217.0
+margin_top = 187.0
+margin_right = 1274.0
+margin_bottom = 235.0
+custom_fonts/font = ExtResource( 1 )
+text = "60"
+__meta__ = {
+"_edit_use_anchors_": false
+}
