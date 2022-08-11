@@ -16,7 +16,7 @@ func _ready():
 func _physics_process(delta):
 	if play:
 		var speed_player = $Background.speed
-		if speed_player > 100:
+		if speed_player > 120:
 			if $swimmer.position.x > 180 :
 				$swimmer.position.x -=  50 * delta
 			if $swimmer2.position.x > 300 :
@@ -29,6 +29,7 @@ func _physics_process(delta):
 			$swimmer3.position.x +=  120 * delta
 		$Score.setValueScore(distance, speed_player * 0.2, $Timer.time_left)
 		distance += 0.01
+		#print("speed player ", speed_player)
 
 func _on_Timer_timeout():
 	$Timer.stop()

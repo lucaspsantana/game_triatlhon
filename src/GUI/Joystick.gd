@@ -1,76 +1,65 @@
 extends CanvasLayer
 
-var swimIncrement = 5
-var swimDecrement = swimIncrement * 0.1
-var pedalIncrement = 35
-var pedalDecrement = pedalIncrement * 0.3
-var timeToActive = 0
+var swimIncrement = 10
+var swimDecrement = swimIncrement 
+var pedalIncrement = 45
+var pedalDecrement = pedalIncrement 
 var buttons = ['left', 'right']
-var rng = RandomNumberGenerator.new()
-var randomIndex
-var defaultColor = 'fff'
-var colorActive = 'efe664'
-var hitColor = '00a000'
-var faultColor = 'd85b55'
+
+var availableTouch = false
+var touchGoals = 10
+var touchCount = 0
 
 func _ready():
-	rng.randomize()
-	randomIndex = rng.randi_range(0,1)
 	if(OS.get_name() != "Windows"):
 		swimIncrement = swimIncrement * 3
 		pedalIncrement = pedalIncrement * 3
+	availableTouch = true
+	$AvailableTimer.start()
+	$"/root/Settings".swim = 0
+	$"/root/Settings".pedal = 0
 
 func _physics_process(delta):
-	timeToActive += 1
 	getEventInput()
-	if timeToActive == 10:
-		get_node(str(buttons[randomIndex])).set_modulate(str(colorActive))
-	if timeToActive == 40:
-		get_node(str(buttons[randomIndex])).set_modulate(str(defaultColor))
-		timeToActive = 0
-		if randomIndex:
-			randomIndex = 0
-		else:
-			randomIndex = 1
-
+#	
 func getEventInput():
 	if Input.get_action_strength("left"):
-		isLeftActive()
+		isAvailableTouch()
 	if Input.get_action_strength("right"):
-		isRightActive()
+		isAvailableTouch()
 
 func increment():
 	#print("Incrementou")
 	$"/root/Settings".swim += swimIncrement
 	$"/root/Settings".pedal += pedalIncrement
+	#print("increment ", swimIncrement)
 
 func decrement():
-	print("Decrementou")
-	$"/root/Settings".swim -= swimDecrement
-	$"/root/Settings".pedal -= pedalDecrement
+	#print("Decrementou")
+	$"/root/Settings".swim = -swimDecrement
+	$"/root/Settings".pedal = -pedalDecrement
 
 func _on_left_pressed():
-	isLeftActive()
+	isAvailableTouch()
 
 func _on_right_pressed():
-	isRightActive()
+	isAvailableTouch()
 
-func isLeftActive():
-	if $left.modulate.to_html(false) == colorActive:
-		increment()
-		#$left.set_modulate(str(hitColor))
-		#$left.set_modulate(str(colorActive))
+func isAvailableTouch():
+	if availableTouch:
+		touchCount += 1
+		
+func _on_AvailableTimer_timeout():
+	if availableTouch:
+		$AvailableTimer.wait_time = 0.5
+		$AvailableTimer.start()
+		if touchCount >= touchGoals:
+			increment()
+		else:
+			decrement()
 	else:
-		decrement()
-		#$left.set_modulate(str(faultColor))
-		#$left.set_modulate(str(defaultColor))
-
-func isRightActive():
-	if $right.modulate.to_html(false) == colorActive:
-		increment()
-		#$right.set_modulate(str(hitColor))
-		#$right.set_modulate(str(colorActive))
-	else:
-		decrement()
-		#$right.set_modulate(str(faultColor))
-		#$right.set_modulate(str(defaultColor))
+		$AvailableTimer.wait_time = 2
+		$AvailableTimer.start()
+	touchCount = 0
+	availableTouch = !availableTouch
+		

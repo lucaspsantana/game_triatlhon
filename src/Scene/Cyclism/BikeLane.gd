@@ -6,7 +6,6 @@ var distance = 0
 
 func _ready():
 	var current_position =  $"/root/Settings".final_position 
-	$ParallaxBackground.speed = 300
 	match current_position:
 		4:
 			$Player.global_position.x = 120
@@ -26,7 +25,7 @@ func _ready():
 func _physics_process(delta):
 	if play:
 		var speed_player = $ParallaxBackground.speed
-		if speed_player > 650:
+		if speed_player > 500:
 			if $Cyclist.position.x > 150 :
 				$Cyclist.position.x -= 50 * delta
 			if $Cyclist2.position.x > 180 :
@@ -43,6 +42,7 @@ func _physics_process(delta):
 			$Cyclist3.position.x +=  120 * delta
 		$Score.setValueScore(distance, speed_player * 0.1, $Timer.time_left)
 		distance += 0.01
+		#print("speed ", speed_player)
 
 func _on_Timer_timeout():
 	$Timer.stop()
@@ -55,7 +55,7 @@ func _on_Timer_timeout():
 		$"/root/Settings".final_position = 2
 	else:
 		$"/root/Settings".final_position = 1
-	print($"/root/Settings".final_position)
+	#print($"/root/Settings".final_position)
 	animation.play("fade_in")
 	yield(animation, "animation_finished")
 	get_tree().change_scene("res://src/Scene/Race/Speedway.tscn")

@@ -5,6 +5,7 @@
 [ext_resource path="res://assets/sprite/botaoPular.png" type="Texture" id=3]
 
 [node name="Joystick" type="CanvasLayer"]
+layer = 10
 scale = Vector2( 2, 2 )
 transform = Transform2D( 2, 0, 0, 2, 0, 0 )
 script = ExtResource( 2 )
@@ -36,5 +37,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AvailableTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="pressed" from="left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="right" to="." method="_on_right_pressed"]
+[connection signal="timeout" from="AvailableTimer" to="." method="_on_AvailableTimer_timeout"]

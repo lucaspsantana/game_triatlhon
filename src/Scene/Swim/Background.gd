@@ -8,23 +8,24 @@ var play = false
 var decrement = false
 
 func _ready():
-	speed = 0
+	speed = speed * 0.634
 
 func _process(delta):
 	if play:
 		if decrement:
 			speed = speed - 30
 			decrement = false 
-			print(speed)
+			#print(speed)
 		else:
 			speed = speed + $"/root/Settings".swim
-		$"/root/Settings".swim = 0		
+		$"/root/Settings".swim = 0
 		if speed > speed_limit:
 			speed = speed_limit
 		if speed < 0:
 			speed = 0
 		parallax_offset -= speed * delta
 		set_scroll_offset(Vector2(parallax_offset, 0))
+		#print("speed", speed)
 
 func _on_Timer_timeout():
 	decrement = true

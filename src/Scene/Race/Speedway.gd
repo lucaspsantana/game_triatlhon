@@ -60,7 +60,7 @@ func _process(delta):
 func _on_Timer_timeout():
 	$Timer.stop()
 	$"/root/Settings".final_position = get_runner_position()
-	print("final position " + str($"/root/Settings".final_position))
+	#print("final position " + str($"/root/Settings".final_position))
 	animation_transition.play("fade_in")
 	yield(animation_transition, "animation_finished")
 	var obstaculeNode = get_tree().get_nodes_in_group("obstacule")

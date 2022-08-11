@@ -18,7 +18,7 @@ func _on_TextureButton_pressed():
 func _on_MusicButton_pressed():
 	$"/root/SoundConfig".enable_music = !$"/root/SoundConfig".enable_music
 	$MusicButton.texture_normal = musicButton[$"/root/SoundConfig".enable_music]
-	print($"/root/SoundConfig".enable_music)
+	#print($"/root/SoundConfig".enable_music)
 	$BackgroundMusic.play_background_music()
 
 func _on_SoundButton_pressed():
